@@ -1,7 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
 
 def switch_to_deepest_iframe(driver):
@@ -22,13 +20,13 @@ def main():
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
     driver.get("https://allstatesugarbowl.org/news/2024/9/9/manning-stars.aspx") 
-    time.sleep(5) 
+    time.sleep(0.5) 
     switch_to_deepest_iframe(driver)
     try:
         colandrea = driver.find_element(By.ID, "1ab96bb1-6eb5-11ef-9287-49c1ce55de26") 
         colandrea.click()
         print("clicked")
-        time.sleep(1)
+        time.sleep(0.1)
     except Exception as e:
         print(f"Error: {e}")
         return False
