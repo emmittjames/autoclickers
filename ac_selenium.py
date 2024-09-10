@@ -31,12 +31,17 @@ def main():
         time.sleep(1)
     except Exception as e:
         print(f"Error: {e}")
+        return False
     driver.quit()
+    return True
 
 if __name__ == '__main__':
+    successes = 0
     for _ in range(0, 10000):
         try:
-            main()
+            if main():
+                successes += 1
         except Exception as e:
             print(f"Error: {e}")
             break
+        print(f"Successes: {successes}")
