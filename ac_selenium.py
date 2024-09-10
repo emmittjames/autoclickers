@@ -50,4 +50,4 @@ if __name__ == '__main__':
         print(f"Successes: {successes}")
         print(f"Failures: {failures}")
         print(f"Successes per minute: {successes / elapsed_time * 60}")
-        print(f"Total Time: {elapsed_time:.2f} minutes")
+        print(f"Total Time: {elapsed_time/60:.2f} minutes")
