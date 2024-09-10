@@ -36,6 +36,7 @@ def main():
 if __name__ == '__main__':
     successes = 0
     failures = 0
+    start_time = time.time()
     for _ in range(0, 10000):
         try:
             if main():
@@ -45,5 +46,8 @@ if __name__ == '__main__':
         except Exception as e:
             print(f"Error: {e}")
             break
+        elapsed_time = time.time() - start_time
         print(f"Successes: {successes}")
         print(f"Failures: {failures}")
+        print(f"Successes per minute: {successes / elapsed_time * 60}")
+        print(f"Total Time: {elapsed_time:.2f} minutes")
